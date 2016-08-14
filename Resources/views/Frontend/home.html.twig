@@ -1,0 +1,54 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block article %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1><kbd>{% trans %}Welcome{% endtrans %} SMP</kbd></h1>
+
+        <div class="pull-right">
+        <video autoplay loop>
+          <source src="https://v.ftcdn.net/01/03/25/78/700_F_103257862_owt1w5p3QZsHyyBTm4Xa9hY6jYBprWDW.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <p>Special Metals and Products, S.L., es una empresa líder en el sector de
+            los metales preciosos, no férreos: y raros, así como sus aleaciones. Desde hace más de 25 años de desarrollo, estamos en condiciones de ofrecer la mejor solución para nuestros clientes.</p>
+            <p>Principalmente, trabajamos con los siguientes materiales: Oro (Au); Plata (Ag); Platino (Pt); Paladio (Pd); Iridio (Ir); Rodio (Rh); Titanio (Ti); Tungsteno o Wolframio (W); Molibdeno (Mo); Niobio (Nb); Tantalio (Ta).</p>
+        <p><a href="{{ path('materials') }}" class="btn btn-primary" role="button">Materiales</a> <!--<a href="#" class="btn btn-default" role="button">Sectores</a>--></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      {% for material in materials %}    
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="{{ material.image2 }}" alt="...">
+              <div class="caption">
+                <h3>{{ material.name|e }}</h3>
+                <div style="height: 13em;">
+                <p>{% autoescape false %}{{ material.description|raw|length > 200 ? material.description|raw|slice(0, 300) ~ '...': material.description|raw }}{% endautoescape %}</p>
+                <p><a class="btn btn-default" href="{{ path('material_show', {'slug': material.slug}) }}" role="button" style="position: absolute; bottom: 3em; left: 3em;">Ver detalles &raquo;</a></p>
+                </div>
+              </div>
+            </div>
+          </div>      
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="pull-right">
+          <svg width="960" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"><g></g><g transform="translate(300,250)scale(0.9126582384109497,0.9126582384109497)"><text text-anchor="middle" transform="translate(269,-64)rotate(-46.66666793823242)" style="font-size: 66px; font-family: Impact; fill: rgb(99, 121, 57);">Au</text><text text-anchor="middle" transform="translate(-242,136)rotate(-6.666666507720948)" style="font-size: 66px; font-family: Impact; fill: rgb(140, 162, 82);">Plata</text><text text-anchor="middle" transform="translate(188,113)rotate(-6.666666507720947)" style="font-size: 66px; font-family: Impact; fill: rgb(181, 207, 107);">Ag</text><text text-anchor="middle" transform="translate(-129,-10)rotate(60)" style="font-size: 66px; font-family: Impact; fill: rgb(206, 219, 156);">Platino</text><text text-anchor="middle" transform="translate(142,-61)rotate(33.33333206176758)" style="font-size: 10px; font-family: Impact; fill: rgb(140, 109, 49);">Pt</text><text text-anchor="middle" transform="translate(-53,138)rotate(-6.666666507720947)" style="font-size: 66px; font-family: Impact; fill: rgb(189, 158, 57);">Paladio</text><text text-anchor="middle" transform="translate(-165,12)rotate(-33.33333206176758)" style="font-size: 66px; font-family: Impact; fill: rgb(231, 186, 82);">Pd</text><text text-anchor="middle" transform="translate(119,-18)rotate(33.33333206176758)" style="font-size: 66px; font-family: Impact; fill: rgb(231, 203, 148);">Iridio</text><text text-anchor="middle" transform="translate(-3,32)rotate(-46.66666793823243)" style="font-size: 66px; font-family: Impact; fill: rgb(132, 60, 57);">Ir</text><text text-anchor="middle" transform="translate(140,-130)rotate(46.66666793823242)" style="font-size: 10px; font-family: Impact; fill: rgb(173, 73, 74);">Rodio</text><text text-anchor="middle" transform="translate(-168,109)rotate(6.666666507720947)" style="font-size: 10px; font-family: Impact; fill: rgb(214, 97, 107);">Rh</text><text text-anchor="middle" transform="translate(44,143)rotate(60)" style="font-size: 10px; font-family: Impact; fill: rgb(156, 158, 222);">Oro</text><text text-anchor="middle" transform="translate(-160,86)rotate(-33.33333206176758)" style="font-size: 66px; font-family: Impact; fill: rgb(123, 65, 115);">Ti</text><text text-anchor="middle" transform="translate(-161,31)rotate(46.66666793823242)" style="font-size: 10px; font-family: Impact; fill: rgb(222, 158, 214);">Wolframio</text><text text-anchor="middle" transform="translate(-18,-90)rotate(-20)" style="font-size: 66px; font-family: Impact; fill: rgb(57, 59, 121);">W</text><text text-anchor="middle" transform="translate(153,61)rotate(-46.66666793823242)" style="font-size: 66px; font-family: Impact; fill: rgb(107, 110, 207);">Mo</text><text text-anchor="middle" transform="translate(108,-171)rotate(33.333332061767585)" style="font-size: 66px; font-family: Impact; fill: rgb(156, 158, 222);">Niobio</text><text text-anchor="middle" transform="translate(-22,-16)rotate(-6.666666507720947)" style="font-size: 66px; font-family: Impact; fill: rgb(99, 121, 57);">Nb</text><text text-anchor="middle" transform="translate(52,32)rotate(-33.33333206176758)" style="font-size: 66px; font-family: Impact; fill: rgb(181, 207, 107);">Ta</text><text text-anchor="middle" transform="translate(278,122)rotate(-46.66666793823242)" style="font-size: 66px; font-family: Impact; fill: rgb(165, 81, 148);">Tungsteno</text><text text-anchor="middle" transform="translate(-185,-83)rotate(-59.99999999999999)" style="font-size: 100px; font-family: Impact; fill: rgb(231, 150, 156);">Titanio</text><text text-anchor="middle" transform="translate(-97,-88)rotate(20)" style="font-size: 10px; font-family: Impact; fill: rgb(231, 186, 82);">Granalla</text><text text-anchor="middle" transform="translate(229,23)rotate(-46.66666793823242)" style="font-size: 10px; font-family: Impact; fill: rgb(231, 203, 148);">Tubos</text><text text-anchor="middle" transform="translate(-80,82)rotate(46.66666793823242)" style="font-size: 10px; font-family: Impact; fill: rgb(132, 60, 57);">Hilo</text><text text-anchor="middle" transform="translate(-43,149)rotate(-20)" style="font-size: 10px; font-family: Impact; fill: rgb(173, 73, 74);">Barras</text><text text-anchor="middle" transform="translate(-78,-68)rotate(-6.666666507720947)" style="font-size: 10px; font-family: Impact; fill: rgb(214, 97, 107);">Planchas</text><text text-anchor="middle" transform="translate(82,-6)rotate(-20)" style="font-size: 10px; font-family: Impact; fill: rgb(231, 150, 156);">Polvo</text><text text-anchor="middle" transform="translate(-116,-229)rotate(6.666666507720948)" style="font-size: 66px; font-family: Impact; fill: rgb(140, 162, 82);">Tantalio</text><text text-anchor="middle" transform="translate(282,-135)rotate(-33.33333206176758)" style="font-size: 66px; font-family: Impact; fill: rgb(82, 84, 163);">Molibdeno</text><text text-anchor="middle" transform="translate(-208,148)rotate(-33.333332061767585)" style="font-size: 10px; font-family: Impact; fill: rgb(123, 65, 115);">Anodos</text><text text-anchor="middle" transform="translate(32,20)rotate(6.666666507720947)" style="font-size: 10px; font-family: Impact; fill: rgb(99, 121, 57);"></text><text text-anchor="middle" transform="translate(115,16)rotate(-6.666666507720947)" style="font-size: 10px; font-family: Impact; fill: rgb(165, 81, 148);">Calidad</text><text text-anchor="middle" transform="translate(-93,-104)rotate(33.33333206176758)" style="font-size: 10px; font-family: Impact; fill: rgb(206, 109, 189);">Resistencia</text><text text-anchor="middle" transform="translate(193,132)rotate(-6.666666507720948)" style="font-size: 10px; font-family: Impact; fill: rgb(222, 158, 214);">Cobre</text><text text-anchor="middle" transform="translate(-56,-100)rotate(-46.66666793823243)" style="font-size: 10px; font-family: Impact; fill: rgb(57, 59, 121);">Cu</text><text text-anchor="middle" transform="translate(-125,33)rotate(-20)" style="font-size: 10px; font-family: Impact; fill: rgb(82, 84, 163);">Pl</text></g></svg>
+        </div>
+    </div>
+
+    <hr>
+{% endblock %}
+
+

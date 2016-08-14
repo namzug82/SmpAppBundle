@@ -1,0 +1,48 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Buscar Material{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Lista de Materials (Total: {{ pagination.getTotalItemCount }})</kbd></h1>
+        
+        <form action="" class="search-form">
+            <input type="text submit" class="typeahead form-control" name="term" id="term" placeholder="Filtrar">
+        </form>
+
+    <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>	<h2><kbd>Material</kbd></h2>	</th>
+	        <th>
+	        	<form style ='float: right; padding: 5px;' action="{{ path('admin_material_new') }}" method="post">
+	    		<button type="submit" class="btn btn-s btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp;</button>
+				</form>					
+	        </th>
+	      </tr>
+	    </thead>
+	    <tbody>
+        {% for key, material in result %}
+    	<tr>
+	    	<td>	<p><a href="{{ path('material_show', {'slug': material.attrs.slug}) }}">{{ material.attrs.name|e }}</a></p>	</td>
+	    	<td>
+	        <form style ='float: right; padding: 5px;' action="{{ path('admin_material_delete', {'id': key}) }}" method="get">
+	            <button type="submit" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;</button>
+	        </form>
+
+	    	<form style ='float: right; padding: 5px;' action="{{ path('admin_material_edit', {'id': key}) }}" method="get">
+	    		<button type="submit" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-edit"></span>&nbsp;</button>
+			</form>
+			</td>
+		</tr>	
+    	{% endfor %}
+    	</tbody>
+  	</table>
+  	{# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+	</div>
+</div>
+{% endblock %}

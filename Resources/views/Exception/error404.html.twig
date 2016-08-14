@@ -1,0 +1,19 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Página no encontrada{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Página no encontrada</kbd></h1>
+    	{# example security usage, see below #}
+	    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	        {# ... #}
+	    {% endif %}
+
+	    <p>
+	        La página solicitada no existe. Por favor, introduzca una URL válida o <a href="{{ path('home') }}">vuelva al inicio</a>.
+	    </p>
+    </div>
+</div>
+{% endblock %}

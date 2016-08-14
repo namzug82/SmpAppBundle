@@ -1,0 +1,21 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Newsletter{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Enviar Información</kbd></h1>
+		<form action="" class="search-form">
+            <input type="text submit" class="typeahead form-control" name="term" id="term" placeholder="Destinatarios">
+        </form>
+
+        <form action="{{ path('admin_newsletter') }}" method="post" {{
+		form_enctype(admin_newsletter_form) }}>
+		{{ form_widget(admin_newsletter_form) }}
+		<input class="boton" type="submit" value="Enviar" />
+		</form>
+    </div>
+</div>
+{% endblock %}
+

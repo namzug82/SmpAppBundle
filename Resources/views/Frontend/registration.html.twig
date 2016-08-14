@@ -1,0 +1,16 @@
+{% extends 'frontend-wo-login.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Registro</kbd></h1>
+        <form action="{{ path('registration') }}" method="post" {{
+		form_enctype(user_registration_form) }}>
+		{{ form_widget(user_registration_form) }}
+		<input class="boton" type="submit" value="Registrarme" />
+		</form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+{% block javascripts %}{% endblock %}
+
+{% block body %}
+<header>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url('home') }}">Special Metals and Products</a>
+        </div>
+    </div>
+</nav>
+</header>
+<article>
+{% block article %}{% endblock %}
+</article>
+<aside>
+{% block aside %}{% endblock %}
+</aside>
+{% endblock %}

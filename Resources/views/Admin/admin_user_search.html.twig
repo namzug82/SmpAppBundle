@@ -1,0 +1,49 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Buscar Usuario{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Lista de Usuarios (Total: {{ pagination.getTotalItemCount }})</kbd></h1>
+        
+        <form action="" class="search-form">
+            <input type="text submit" class="typeahead form-control" name="term" id="term" placeholder="Filtrar">
+        </form>
+
+    <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>	<h2><kbd>E-mail</kbd></h2>	</th>
+        	<th>	<h2><kbd>Role</kbd></h2>	</th>
+        	<th>
+	        	<form style ='float: right; padding: 5px;' action="{{ path('admin_user_new') }}" method="post">
+	    		<button type="submit" class="btn btn-s btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp;</button>
+				</form>					
+	        </th>
+	      </tr>
+	    </thead>
+	    <tbody>
+        {% for key, user in result %}
+    	<tr>
+	    	<td>	<p>{{ user.attrs.email|e }}</p>	</td>
+	    	<td>	<p>{{ user.attrs.role|e }}</p>	</td>
+	        <td>
+	        <form style ='float: right; padding: 5px;' action="{{ path('admin_user_delete', {'id': key}) }}" method="get">
+	            <button type="submit" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;</button>
+	        </form>
+	    	<form style ='float: right; padding: 5px;' action="{{ path('admin_user_edit', {'id': key}) }}" method="get">
+	    		<button type="submit" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-edit"></span>&nbsp;</button>
+			</form>
+			</td>
+		</tr>	
+    	{% endfor %}
+    	</tbody>
+  	</table>
+  	{# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+	</div>
+</div>
+{% endblock %}

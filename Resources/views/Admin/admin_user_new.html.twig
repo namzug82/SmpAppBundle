@@ -1,0 +1,18 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Añadir Usuario{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Añadir Usuario</kbd></h1>
+        <form action="{{ path('admin_user_new') }}" method="post" {{
+		form_enctype(admin_user_form) }}>
+		{{ form_row(admin_user_form._token) }}
+		{{ form_widget(admin_user_form) }}
+		<input class="boton" type="submit" value="Añadir" />
+		{{ form_rest(admin_user_form) }}
+		</form>
+    </div>
+</div>
+{% endblock %}

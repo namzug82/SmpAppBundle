@@ -1,0 +1,25 @@
+
+
+<div class="jumbotron">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+                    <div id="the-basics">
+                    <input type="text" class="typeahead form-control" name="search" id="search" placeholder="Materiales">
+                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+    
+
+{% block javascripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('js/the-basics.js') }}"></script>
+<script src="{{ asset('js/typeahead.js') }}"></script>
+{% endblock %}

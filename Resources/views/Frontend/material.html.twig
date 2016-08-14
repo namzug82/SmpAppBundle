@@ -1,0 +1,20 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Material{% endblock %}
+
+{% block article %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1><kbd>{{ material.name }}</kbd></h1>
+            <img src={{ material.image1 }} alt="..." class="img-thumbnail">
+            <!--<img src="{{ asset('uploads/images/' ~ material.image1) }}" alt="..." class="img-thumbnail">-->
+            <br>
+            <h2><kbd>{{ material.name }}: Descripción y Propiedades</kbd></h2>
+            <div class="panel panel-default">
+            <div class="panel-body">
+            <p>{{ material.description|raw }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

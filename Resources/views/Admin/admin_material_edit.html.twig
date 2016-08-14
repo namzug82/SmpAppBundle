@@ -1,0 +1,16 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Editar Material{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Editar Material</kbd></h1>
+        <form action="{{ path('admin_material_edit', {'id': material.id}) }}" method="post" {{
+		form_enctype(admin_material_form) }}>
+		{{ form_widget(admin_material_form) }}
+		<input class="boton" type="submit" value="Guardar" />
+		</form>
+    </div>
+</div>
+{% endblock %}

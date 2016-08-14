@@ -1,0 +1,16 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Limpiar Caché{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Limpiar Caché</kbd></h1>
+        <form action="{{ path('admin_clear_cache') }}" method="post" {{
+		form_enctype(admin_cache_form) }}>
+		{{ form_widget(admin_cache_form) }}
+		<input class="boton" type="submit" value="Limpiar" />
+		</form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Panel{% endblock %}
+
+{% block article %}
+    <div class="jumbotron">
+        <div class="container">
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <h1><kbd>Panel Administrador</kbd></h1>
+            <br>
+            <form action="{{ url('show_users') }}" method="get">
+              <button type="submit" class="btn btn-primary btn-block"><p>Gestionar Usuarios</p></button>
+            </form>
+            <br>
+            <form action="{{ url('admin_materials') }}" method="get">
+              <button type="submit" class="btn btn-primary btn-block"><p>Gestionar Materiales</p></button>
+            </form>
+            <br>
+            <form action="{{ url('admin_newsletter') }}" method="get">
+              <button type="submit" class="btn btn-primary btn-block"><p>Enviar Hoja Informativa</p></button>
+            </form>        
+        {% else %}
+            <h1><kbd>Panel Usuario</kbd></h1>
+            <br>
+            <form action="{{ url('profile') }}" method="get">
+              <button type="submit" class="btn btn-primary btn-block"><p>Editar Perfil</p></button>
+            </form>
+        {% endif %}
+      
+        </div>
+    </div>
+{% endblock %}

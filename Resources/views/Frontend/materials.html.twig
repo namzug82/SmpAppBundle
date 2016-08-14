@@ -1,0 +1,34 @@
+{% extends 'frontend.html.twig' %}
+
+{% block title %}Materials{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Lista de Materials (Total: {{ pagination.getTotalItemCount }})</kbd></h1>
+
+        <form action="{{ path('material_search') }}" class="search-form">
+            <input type="text submit" class="typeahead form-control" name="term" id="term" placeholder="Filtrar">
+        </form>
+
+	<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>	<h2><kbd>Material</kbd></h2>	</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for material in pagination %}
+        <tr>
+        	<td>	<p><a href="{{ path('material_show', {'slug': material.slug}) }}">{{ material.name|e }}</a></p>	</td>
+    	</tr>	
+        {% endfor %}
+       	</tbody>
+  	</table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+    </div>
+</div>
+{% endblock %}

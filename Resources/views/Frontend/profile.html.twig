@@ -1,0 +1,16 @@
+{% extends 'frontend-wo-login.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block article %}
+<div class="jumbotron">
+	<div class="container">
+	<h1><kbd>Mi Perfil</kbd></h1>
+        <form action="{{ path('profile') }}" method="post" {{
+		form_enctype(user_profile_form) }}>
+		{{ form_widget(user_profile_form) }}
+		<input class="boton" type="submit" value="Guardar" />
+		</form>
+    </div>
+</div>
+{% endblock %}
