@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/"
+            "Smp\\AppBundle\\": "src/"
         }
     },
     "minimum-stability": "dev",
