@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Admin;
+namespace SmpBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\File;
@@ -8,8 +8,8 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use AppBundle\Form\Admin\AdminNewsletterType;
-use AppBundle\Entity\Newsletter;
+use SmpBundle\Form\Admin\AdminNewsletterType;
+use SmpBundle\Entity\Newsletter;
 
 
 class AdminNewsletterController extends Controller
@@ -44,7 +44,7 @@ class AdminNewsletterController extends Controller
             }
         }
 
-        return $this->render('AppBundle:Admin:admin_newsletter.html.twig', array(
+        return $this->render('SmpBundle:Admin:admin_newsletter.html.twig', array(
                 'admin_newsletter_form' => $form->createView(),
         ));
 	}

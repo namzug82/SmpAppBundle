@@ -1,11 +1,11 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Entity\User;
-use AppBundle\Form\Frontend\UserType;
+use SmpBundle\Entity\User;
+use SmpBundle\Form\Frontend\UserType;
 
 class RegistrationController extends Controller
 {
@@ -39,7 +39,7 @@ class RegistrationController extends Controller
 		}
 
 		return $this->render(
-			'AppBundle:Frontend:registration.html.twig', array(
+			'SmpBundle:Frontend:registration.html.twig', array(
 				'user_registration_form' => $userRegistrationForm->createView()
 			)
 		);

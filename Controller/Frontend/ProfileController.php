@@ -1,12 +1,12 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Entity\User;
-use AppBundle\Form\Frontend\UserType;
+use SmpBundle\Entity\User;
+use SmpBundle\Form\Frontend\UserType;
 
 class ProfileController extends Controller
 {
@@ -48,7 +48,7 @@ class ProfileController extends Controller
 			}
 		}
 		return $this->render(
-			'AppBundle:Frontend:profile.html.twig',	array(
+			'SmpBundle:Frontend:profile.html.twig',	array(
 				'user_profile_form' => $form->createView())
 		);
 	}

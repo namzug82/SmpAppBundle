@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Repository;
+namespace SmpBundle\Repository;
 
 interface SphinxRepository
 {

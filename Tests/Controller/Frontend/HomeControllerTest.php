@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Tests\Controller\Frontend;
+namespace SmpBundle\Tests\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\BrowserKit\Cookie;

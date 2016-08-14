@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -12,7 +12,7 @@ class StaticPageController extends Controller
 	public function indexAction($page)
 	{
     	try {
-			return $this->get('templating')->render('AppBundle:Frontend:'.$page.'.html.twig');
+			return $this->get('templating')->render('SmpBundle:Frontend:'.$page.'.html.twig');
 		} catch (\Exception $e) {
 		    return $this->render('Exception/error404.html.twig');
 		}

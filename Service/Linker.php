@@ -1,10 +1,9 @@
 <?php
+namespace SmpBundle\Service;
 
-namespace AppBundle\Service;
-
-use AppBundle\Entity\User;
-use AppBundle\Entity\Material;
-use AppBundle\Entity\UsersMaterials;
+use SmpBundle\Entity\User;
+use SmpBundle\Entity\Material;
+use SmpBundle\Entity\UsersMaterials;
 
 interface Linker
 {

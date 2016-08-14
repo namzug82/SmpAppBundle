@@ -1,9 +1,9 @@
 <?php
-namespace AppBundle\Form\Frontend;
+namespace SmpBundle\Form\Frontend;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use AppBundle\Form\Frontend\UploadType;
+use SmpBundle\Form\Frontend\UploadType;
 
 class UploadType extends AbstractType
 {
@@ -15,6 +15,6 @@ class UploadType extends AbstractType
 
 	public function getName()
 	{
-		return 'smp_appbundle_uploadtype';
+		return 'smp_SmpBundle_uploadtype';
 	}
 }

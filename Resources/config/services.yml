@@ -1,4 +1,51 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+# imports:
+#     - { resource: parameters.yml }
+
+parameters:
+    s3_client.config:
+        bucket:  "%s3_bucket%"
+        key:     "%s3_key%"
+        secret:  "%s3_secret%"
+        region:  "%s3_region%"    # Region of Bucket
+        version: "%s3_version%"      # API Version
+
 services:
-#    app.example:
-#        class: Smp\AppBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    cache:
+        class: Doctrine\Common\Cache\ApcCache
+
+    slugger:
+        class: SmpBundle\Service\Slugger
+
+    predis_client:
+        class: SmpBundle\Service\PredisClient
+
+    s3_client:
+      class: SmpBundle\Service\S3Bucket
+      arguments: ["@service_container", "%s3_client.config%"]
+
+    users_materials_linker:
+      class: SmpBundle\Service\UsersMaterialsLinker
+      arguments: ["@doctrine.orm.entity_manager"]
+
+    material_repo:
+        class: SmpBundle\Repository\MaterialRepository
+        # calls:
+        #     - [setContainer, ["@service_container"]]
+        #     - [setPredis, ["@predis_client"]]
+
+    user_sphinx_repo:
+        class: SmpBundle\Repository\UserSphinxRepository
+        arguments: ["@service_container"]
+
+    material_sphinx_repo:
+        class: SmpBundle\Repository\MaterialSphinxRepository
+        arguments: ["@service_container"]
+
+    target_user_retriever:
+        class: SmpBundle\Service\TargetUserRetriever
+        arguments: ["@service_container", "@doctrine.orm.entity_manager"]

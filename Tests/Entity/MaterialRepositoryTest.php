@@ -1,11 +1,11 @@
 <?php
-namespace AppBundle\Tests\Entity;
+namespace SmpBundle\Tests\Entity;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\HttpFoundation\File\File;
-use AppBundle\Entity\Material;
+use SmpBundle\Entity\Material;
 
 class MaterialRepositoryTest extends KernelTestCase
 {
@@ -98,7 +98,7 @@ class MaterialRepositoryTest extends KernelTestCase
     public function testSuccessfullyFindOneBySlug()
     {
         $material = $this->em
-            ->getRepository('AppBundle:Material')
+            ->getRepository('SmpBundle:Material')
             ->findBySlug('test-material')
         ;
 
@@ -108,7 +108,7 @@ class MaterialRepositoryTest extends KernelTestCase
     public function testUnsuccessfullyFindOneBySlug()
     {
         $material = $this->em
-            ->getRepository('AppBundle:Material')
+            ->getRepository('SmpBundle:Material')
             ->findBySlug('nonexistent-material')
         ;
 
@@ -118,7 +118,7 @@ class MaterialRepositoryTest extends KernelTestCase
     public function testRetrieveArrayAllMaterials()
     {
         $arrayOfAllMaterials = $this->em
-            ->getRepository('AppBundle:Material')
+            ->getRepository('SmpBundle:Material')
             ->retrieveArrayAllMaterials()
         ;
 
@@ -153,7 +153,7 @@ class MaterialRepositoryTest extends KernelTestCase
     private function setMaterial()
     {
         if (null == $this->em
-            ->getRepository('AppBundle:Material')
+            ->getRepository('SmpBundle:Material')
             ->findBySlug('test-material')
         ) {
             $this->material = new Material();
@@ -164,7 +164,7 @@ class MaterialRepositoryTest extends KernelTestCase
             $this->em->flush();
         } else {
             $material = $this->em
-                ->getRepository('AppBundle:Material')
+                ->getRepository('SmpBundle:Material')
                 ->findBySlug('test-material')
             ;
 

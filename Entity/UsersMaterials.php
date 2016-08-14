@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Entity;
+namespace SmpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * UsersMaterials
  *
  * @ORM\Table(name="users_materials")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersMaterialsRepository")
+ * @ORM\Entity(repositoryClass="SmpBundle\Repository\UsersMaterialsRepository")
  */
 class UsersMaterials
 {

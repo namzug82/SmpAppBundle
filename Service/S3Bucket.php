@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Service;
+namespace SmpBundle\Service;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Aws\S3\Exception\S3Exception;

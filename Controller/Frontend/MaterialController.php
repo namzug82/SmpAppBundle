@@ -1,12 +1,12 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Model\UsersMaterialsLinker;
+use SmpBundle\Model\UsersMaterialsLinker;
 
 class MaterialController extends Controller
 {
@@ -30,7 +30,7 @@ class MaterialController extends Controller
 	    
     	// parameters to template
     	return $this->render(
-    		'AppBundle:Frontend:materials.html.twig', array(
+    		'SmpBundle:Frontend:materials.html.twig', array(
     			'pagination' => $pagination
     	), $response);
 	}
@@ -54,7 +54,7 @@ class MaterialController extends Controller
 	    $response->setMaxAge(self::MEDIUM_CACHE_LIFETIME);
 	    $response->setEtag(md5($request->query->get('term')));
 
-    	return $this->render('AppBundle:Frontend:material_search.html.twig', array(
+    	return $this->render('SmpBundle:Frontend:material_search.html.twig', array(
 				'result' => $result['matches'],
 				'pagination' => $pagination
 		), $response);
@@ -67,7 +67,7 @@ class MaterialController extends Controller
 	public function showAction($slug)
 	{
 		$material = $this->getDoctrine()
-	        ->getRepository('AppBundle:Material')
+	        ->getRepository('SmpBundle:Material')
 	        ->findOneBySlug($slug);
 
         if (!$material) {
@@ -86,7 +86,7 @@ class MaterialController extends Controller
 	    $response->setEtag(md5($slug));
 	        
 		return $this->render(
-			'AppBundle:Frontend:material.html.twig', array(
+			'SmpBundle:Frontend:material.html.twig', array(
 				'material' => $material	
 		), $response);
 	}
@@ -94,7 +94,7 @@ class MaterialController extends Controller
 	private function getAllMaterials()
 	{
 		return $this->getDoctrine()
-	        ->getRepository('AppBundle:Material')
+	        ->getRepository('SmpBundle:Material')
 	        ->findAll();
 	}
 

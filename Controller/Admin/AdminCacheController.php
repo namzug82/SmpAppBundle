@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Admin;
+namespace SmpBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\HttpCache\HttpCache;
@@ -40,7 +40,7 @@ class AdminCacheController extends Controller
             }
         }
      
-        return $this->render('AppBundle:Admin:admin_clear_cache.html.twig', array(
+        return $this->render('SmpBundle:Admin:admin_clear_cache.html.twig', array(
             'admin_cache_form' => $form->createView(),
         ));
     }

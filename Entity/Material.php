@@ -1,18 +1,17 @@
 <?php
-
-namespace AppBundle\Entity;
+namespace SmpBundle\Entity;
 
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Service\Slugger;
+use SmpBundle\Service\Slugger;
 
 /**
  * Material
  *
  * @ORM\Table(name="material")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MaterialRepository")
+ * @ORM\Entity(repositoryClass="SmpBundle\Repository\MaterialRepository")
  * @UniqueEntity("name")
  * @UniqueEntity("slug")
  */

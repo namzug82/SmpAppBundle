@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Form\Admin;
+namespace SmpBundle\Form\Admin;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -32,6 +32,6 @@ class AdminUserType extends AbstractType
 
 	public function getName()
 	{
-		return 'smp_appbundle_newusertype';
+		return 'smp_SmpBundle_newusertype';
 	}
 }

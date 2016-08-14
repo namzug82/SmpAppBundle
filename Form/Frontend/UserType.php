@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Form\Frontend;
+namespace SmpBundle\Form\Frontend;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,6 +26,6 @@ class UserType extends AbstractType
 
 	public function getName()
 	{
-		return 'smp_appbundle_usertype';
+		return 'smp_SmpBundle_usertype';
 	}
 }

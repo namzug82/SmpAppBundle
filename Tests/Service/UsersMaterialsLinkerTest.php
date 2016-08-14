@@ -1,9 +1,9 @@
 <?php 
-namespace Tests\Service;
+namespace SmpBundle\Tests\Service;
 
-use AppBundle\Service\UsersMaterialsLinker;
-use AppBundle\Entity\User;
-use AppBundle\Entity\Material;
+use SmpBundle\Service\UsersMaterialsLinker;
+use SmpBundle\Entity\User;
+use SmpBundle\Entity\Material;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class UsersMaterialsLinkerTest extends KernelTestCase

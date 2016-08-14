@@ -1,6 +1,6 @@
 <?php
 
-namespace Smp\AppBundle\Controller;
+namespace SmpBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -12,6 +12,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Default:index.html.twig');
+        return $this->render('SmpBundle:Default:index.html.twig');
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +21,7 @@ class SecurityController extends Controller
 	    $lastUsername = $authenticationUtils->getLastUsername();
 
 	    return $this->render(
-	        'AppBundle:Frontend:login.html.twig', array(
+	        'SmpBundle:Frontend:login.html.twig', array(
 	            'error'	=> $error,
 	        )
 	    );

@@ -1,13 +1,12 @@
 <?php
-
-namespace AppBundle\Service;
+namespace SmpBundle\Service;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Doctrine\ORM\EntityManager as EntityManager;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
-use AppBundle\Entity\User;
-use AppBundle\Entity\Material;
-use AppBundle\Entity\UsersMaterials;
+use SmpBundle\Entity\User;
+use SmpBundle\Entity\Material;
+use SmpBundle\Entity\UsersMaterials;
 
 class UsersMaterialsLinker implements Linker
 {

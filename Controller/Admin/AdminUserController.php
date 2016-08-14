@@ -1,12 +1,12 @@
 <?php
-namespace AppBundle\Controller\Admin;
+namespace SmpBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use AppBundle\Entity\User;
-use AppBundle\Form\Admin\AdminUserType;
+use SmpBundle\Entity\User;
+use SmpBundle\Form\Admin\AdminUserType;
 
 class AdminUserController extends Controller
 {
@@ -17,7 +17,7 @@ class AdminUserController extends Controller
 	public function showAction(Request $request)
 	{
 		$users = $this->getDoctrine()
-	        ->getRepository('AppBundle:User')
+	        ->getRepository('SmpBundle:User')
 	        ->findAll();
 
 	    $paginator  = $this->get('knp_paginator');
@@ -28,7 +28,7 @@ class AdminUserController extends Controller
     	);
 
 	    return $this->render(
-    		'AppBundle:Admin:admin_users.html.twig', array(
+    		'SmpBundle:Admin:admin_users.html.twig', array(
     			'pagination' => $pagination
     		)
     	);
@@ -48,7 +48,7 @@ class AdminUserController extends Controller
 
 		$pagination = $this->getPaginatedResults($request, $result['matches']);
 
-    	return $this->render('AppBundle:Admin:admin_user_search.html.twig', array(
+    	return $this->render('SmpBundle:Admin:admin_user_search.html.twig', array(
 				'result' => $result['matches'],
 				'pagination' => $pagination
 		));
@@ -83,7 +83,7 @@ class AdminUserController extends Controller
 			}
 		}
 
-		return $this->render('AppBundle:Admin:admin_user_new.html.twig', array(
+		return $this->render('SmpBundle:Admin:admin_user_new.html.twig', array(
 			'admin_user_form' => $form->createView()
 		));
 	}
@@ -94,7 +94,7 @@ class AdminUserController extends Controller
 	public function editAction(Request $request, $id)
 	{
 		$user = $this->getDoctrine()
-	        ->getRepository('AppBundle:User')
+	        ->getRepository('SmpBundle:User')
 	        ->find($id);
 
 	    if (!$user) {
@@ -133,7 +133,7 @@ class AdminUserController extends Controller
 				return $this->redirect($this->generateUrl('show_users'));
 			}
 		}
-		return $this->render('AppBundle:Admin:admin_user_edit.html.twig', array(
+		return $this->render('SmpBundle:Admin:admin_user_edit.html.twig', array(
 			'user'				=>	$user,
 			'admin_user_form'	=>	$form->createView()
 		));
@@ -146,7 +146,7 @@ class AdminUserController extends Controller
 	public function deleteAction($id)
 	{
 		$userToRemove = $this->getDoctrine()
-	        ->getRepository('AppBundle:User')
+	        ->getRepository('SmpBundle:User')
 	        ->find($id);
 	    $userOfSession = $this->get('security.context')->getToken()->getUser();
 

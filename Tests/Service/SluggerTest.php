@@ -1,7 +1,7 @@
 <?php
-namespace AppBundle\Tests\Service;
+namespace SmpBundle\Tests\Service;
 
-use AppBundle\Service\Slugger;
+use SmpBundle\Service\Slugger;
 
 final class SluggerTest extends \PHPUnit_Framework_TestCase
 {

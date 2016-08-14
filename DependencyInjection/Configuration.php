@@ -1,6 +1,5 @@
 <?php
-
-namespace Smp\AppBundle\DependencyInjection;
+namespace SmpBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

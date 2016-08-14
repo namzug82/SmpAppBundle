@@ -1,9 +1,9 @@
 <?php 
-namespace Tests\Repository;
+namespace SmpBundle\Tests\Repository;
 
-use AppBundle\Service\UsersMaterialsLinker;
-use AppBundle\Entity\User;
-use AppBundle\Entity\Material;
+use SmpBundle\Service\UsersMaterialsLinker;
+use SmpBundle\Entity\User;
+use SmpBundle\Entity\Material;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class UsersMaterialsRepositoryTest extends KernelTestCase
@@ -41,7 +41,7 @@ final class UsersMaterialsRepositoryTest extends KernelTestCase
         $testId = $this->user->getId();
         $materialId = array(0);
         $arrayOfUsers = $this->em
-            ->getRepository('AppBundle:UsersMaterials')
+            ->getRepository('SmpBundle:UsersMaterials')
             ->getUsersByMaterialIds($materialId)
         ;
 
@@ -51,7 +51,7 @@ final class UsersMaterialsRepositoryTest extends KernelTestCase
     private function setUser()
     {
         if (null == $this->em
-            ->getRepository('AppBundle:User')
+            ->getRepository('SmpBundle:User')
             ->findByName('Test User')
         ) {
             $this->user = new User();
@@ -66,7 +66,7 @@ final class UsersMaterialsRepositoryTest extends KernelTestCase
             $this->em->flush();
         } else {
             $user = $this->em
-                ->getRepository('AppBundle:User')
+                ->getRepository('SmpBundle:User')
                 ->findByName('Test User')
             ;
 

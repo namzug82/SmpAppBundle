@@ -1,6 +1,5 @@
 <?php
-
-namespace Smp\AppBundle\DependencyInjection;
+namespace SmpBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

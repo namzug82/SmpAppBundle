@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Service;
+namespace SmpBundle\Service;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Doctrine\ORM\EntityManager as EntityManager;
@@ -51,7 +51,7 @@ final class TargetUserRetriever
     private function getUsersByMaterialIds($arrayOfMaterialsIds)
     {
         $users = $this->em
-            ->getRepository('AppBundle:UsersMaterials')
+            ->getRepository('SmpBundle:UsersMaterials')
             ->getUsersByMaterialIds($arrayOfMaterialsIds);
 
         return $users;

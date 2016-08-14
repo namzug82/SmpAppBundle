@@ -1,9 +1,9 @@
 {
-    "name": "smp/appbundle",
+    "name": "smp/smpbundle",
     "license": "proprietary",
     "type": "symfony-bundle",
     "autoload": {
-        "psr-4": { "Smp\\AppBundle\\": "" }
+        "psr-4": { "SmpBundle\\": "" }
     },
     "minimum-stability": "dev",
     "require": {

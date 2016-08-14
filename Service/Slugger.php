@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Service;
+namespace SmpBundle\Service;
 
 final class Slugger
 {

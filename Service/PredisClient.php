@@ -1,9 +1,9 @@
 <?php
-namespace AppBundle\Service;
+namespace SmpBundle\Service;
 
 use Snc\RedisBundle\Doctrine\Cache\RedisCache;
 use Predis\Client;
-use AppBundle\Service\Cache;
+use SmpBundle\Service\Cache;
 
 final class PredisClient implements Cache
 {

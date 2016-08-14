@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Repository;
+namespace SmpBundle\Repository;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Doctrine\ORM\EntityRepository;
@@ -25,7 +25,7 @@ class MaterialRepository extends EntityRepository
     	$query = $this->getEntityManager()
 	        ->createQuery(
 		        'SELECT m
-				FROM AppBundle:Material m
+				FROM SmpBundle:Material m
 				ORDER BY m.name ASC')
             ->setResultCacheDriver($this->predis)
             ->setResultCacheLifetime(self::CACHE_LIFETIME)
@@ -44,7 +44,7 @@ class MaterialRepository extends EntityRepository
 		$query = $this->getEntityManager()
 	        ->createQuery(
 		        'SELECT m
-				FROM AppBundle:Material m
+				FROM SmpBundle:Material m
 				WHERE m.slug = :slug')
 	        ->setParameter('slug', $slug)
             ->setResultCacheDriver($this->predis)

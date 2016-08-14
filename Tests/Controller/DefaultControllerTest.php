@@ -1,6 +1,5 @@
 <?php
-
-namespace Smp\AppBundle\Tests\Controller;
+namespace SmpBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

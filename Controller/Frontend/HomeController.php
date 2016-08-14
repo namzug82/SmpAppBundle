@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -21,7 +21,7 @@ class HomeController extends Controller
 	    $error = $authenticationUtils->getLastAuthenticationError();
 
 	    $materials = $this->getDoctrine()
-	        ->getRepository('AppBundle:Material')
+	        ->getRepository('SmpBundle:Material')
 	        ->findAll();
 
 	    $response = new Response();
@@ -30,7 +30,7 @@ class HomeController extends Controller
 	    $response->headers->addCacheControlDirective('must-revalidate', true);
 
 	    return $this->render(
-	        'AppBundle:Frontend:home.html.twig', array(
+	        'SmpBundle:Frontend:home.html.twig', array(
 	            'materials' 		=> $materials,
 	            'error'         => $error,
 	    ), $response);
@@ -47,7 +47,7 @@ class HomeController extends Controller
 	    $error = $authenticationUtils->getLastAuthenticationError();
 
 	    return $this->render(
-	        'AppBundle:Frontend:panel.html.twig', array(
+	        'SmpBundle:Frontend:panel.html.twig', array(
 	            'error'         => $error,
 	    ));
 	}

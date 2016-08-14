@@ -1,6 +1,5 @@
 <?php
-
-namespace AppBundle\Entity;
+namespace SmpBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -12,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="SmpBundle\Repository\UserRepository")
  * @UniqueEntity("email")
  */
 class User implements UserInterface

@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Repository;
+namespace SmpBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -17,8 +17,8 @@ class UsersMaterialsRepository extends EntityRepository
 	        ->createQueryBuilder();
 	    $query
 	    	->select('u')
-	    	->from('AppBundle\Entity\User', 'u')
-	    	->innerJoin('AppBundle:UsersMaterials', 'um', 'WITH', 'u.id = um.userId')
+	    	->from('SmpBundle\Entity\User', 'u')
+	    	->innerJoin('SmpBundle:UsersMaterials', 'um', 'WITH', 'u.id = um.userId')
 	    	->andWhere('um.materialId IN (:materialIds)')
 	    	->setParameter('materialIds', $arrayOfMaterialIds)
 	    ;

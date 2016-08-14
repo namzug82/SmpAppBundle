@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Form\Admin;
+namespace SmpBundle\Form\Admin;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,6 +29,6 @@ class AdminNewsletterType extends AbstractType
 
 	public function getName()
 	{
-		return 'smp_appbundle_newslettertype';
+		return 'smp_SmpBundle_newslettertype';
 	}
 }

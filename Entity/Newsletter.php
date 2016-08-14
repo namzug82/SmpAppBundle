@@ -1,6 +1,5 @@
 <?php
-
-namespace AppBundle\Entity;
+namespace SmpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Newsletter
  *
  * @ORM\Table(name="newsletter")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\NewsletterRepository")
+ * @ORM\Entity(repositoryClass="SmpBundle\Repository\NewsletterRepository")
  */
 class Newsletter
 {

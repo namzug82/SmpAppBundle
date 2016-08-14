@@ -1,10 +1,10 @@
 <?php
-namespace AppBundle\Tests\Entity;
+namespace SmpBundle\Tests\Entity;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Validation;
-use AppBundle\Entity\User;
+use SmpBundle\Entity\User;
 
 class UserRepositoryTest extends KernelTestCase
 {
@@ -29,7 +29,7 @@ class UserRepositoryTest extends KernelTestCase
     public function testSuccessfullyFindByName()
     {
         $user = $this->em
-            ->getRepository('AppBundle:User')
+            ->getRepository('SmpBundle:User')
             ->findByName('Test User')
         ;
 
@@ -39,7 +39,7 @@ class UserRepositoryTest extends KernelTestCase
     public function testUnsuccessfullyFindByName()
     {
         $user = $this->em
-            ->getRepository('AppBundle:User')
+            ->getRepository('SmpBundle:User')
             ->findByName('Nonexistent User')
         ;
 
@@ -106,7 +106,7 @@ class UserRepositoryTest extends KernelTestCase
     private function setUser()
     {
         if (null == $this->em
-            ->getRepository('AppBundle:User')
+            ->getRepository('SmpBundle:User')
             ->findByName('Test User')
         ) {
             $this->user = new User();
@@ -121,7 +121,7 @@ class UserRepositoryTest extends KernelTestCase
             $this->em->flush();
         } else {
             $user = $this->em
-                ->getRepository('AppBundle:User')
+                ->getRepository('SmpBundle:User')
                 ->findByName('Test User')
             ;
 
