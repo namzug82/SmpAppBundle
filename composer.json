@@ -76,10 +76,5 @@
         "platform": {
             "php": "5.3.9"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "dev-master"
-        }
     }
 }
