@@ -11,6 +11,7 @@
             "app/AppCache.php"
         ]
     },
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.8.*",
@@ -39,7 +40,6 @@
         "sensio/generator-bundle": "~3.0",
         "symfony/phpunit-bridge": "~2.7"
     },
-    "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
