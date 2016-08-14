@@ -1,5 +1,5 @@
 <?php
-namespace Smp\AppBundle\Controller\Admin;
+namespace SmpBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\File;
@@ -8,8 +8,8 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Smp\AppBundle\Entity\Material;
-use Smp\AppBundle\Form\Admin\AdminMaterialType;
+use SmpBundle\Entity\Material;
+use SmpBundle\Form\Admin\AdminMaterialType;
 use Aws\S3\S3Client;
 
 class AdminMaterialController extends Controller

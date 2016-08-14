@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Frontend;
+namespace SmpBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +16,7 @@ class AjaxController extends Controller
 	public function indexAction(Request $request)
 	{		
 		$arrayOfAllMaterials = $this->getDoctrine()
-	        ->getRepository('AppBundle:Material')
+	        ->getRepository('SmpBundle:Material')
 	        ->retrieveArrayAllMaterials();
 
 		$data = array("code" => 100, "success" => true, "materials" => $arrayOfAllMaterials);
