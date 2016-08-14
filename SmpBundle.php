@@ -1,8 +1,8 @@
 <?php
-namespace Smp\AppBundle;
+namespace SmpBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SmpAppBundle extends Bundle
+class SmpBundle extends Bundle
 {
 }
