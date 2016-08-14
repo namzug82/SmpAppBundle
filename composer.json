@@ -5,11 +5,7 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/"
-        },
-        "classmap": [
-            "app/AppKernel.php",
-            "app/AppCache.php"
-        ]
+        }
     },
     "minimum-stability": "dev",
     "require": {
