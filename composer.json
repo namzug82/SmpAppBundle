@@ -36,7 +36,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "symfony/assetic-bundle": "^2.8",
         "braincrafted/bootstrap-bundle": "^2.2",
-        "jquery/jquery":  "1.11.*",
+        "wangaz/laravel-semantic-ui-css": ">=0.3",
         "aws/aws-sdk-php": "^2.8",
         "twbs/bootstrap": "^3.0",
         "twbs/bootstrap-sass": "^3.3",
