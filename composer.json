@@ -3,10 +3,9 @@
     "license": "proprietary",
     "type": "symfony-bundle",
     "autoload": {
-        "psr-4": {
-            "Smp\\AppBundle\\": "src/"
-        }
+        "psr-4": { "Smp\\AppBundle": "" }
     },
+    "target-dir": "Smp/AppBundle",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.9",
