@@ -1,7 +1,7 @@
 {
     "name": "smp/appbundle",
     "license": "proprietary",
-    "type": "project",
+    "type": "symfony-bundle",
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/"
@@ -53,6 +53,7 @@
         "sensio/generator-bundle": "~3.0",
         "symfony/phpunit-bridge": "~2.7"
     },
+    "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
